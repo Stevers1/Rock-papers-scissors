@@ -8,6 +8,7 @@ function getComputerChoice() {
   let min = Math.ceil(0);
   let max = Math.floor(2);
   let random = Math.floor(Math.random() * (max - min + 1) + min); 
+
   if (random == 0)
   {
     return rock;
@@ -25,7 +26,6 @@ let playerSelection;
 
 
 function playRound(playerSelection,pcChoice) {
-
 
 
   if(pcChoice == rock && playerSelection == papper) {
@@ -52,7 +52,9 @@ function playRound(playerSelection,pcChoice) {
 
 
 function game() {
+
   for(let i = 0; i < 5; i++){
+    
     const pcChoice = getComputerChoice();
     playerSelection = prompt("Write your choice:")
     console.log("PC "+ pcChoice );
@@ -79,6 +81,6 @@ function game() {
   }
   else {console.log('You lost the game');}
 }
-game();
+
 
 
