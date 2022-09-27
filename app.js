@@ -2,6 +2,38 @@ let rock = "Rock";
 let papper = "Papper";
 let scissors = "Scissors";
 let wins = 0;
+let playerSelection;
+const btnrock = document.getElementById('btn1');
+const btnpapper = document.getElementById('btn2');
+const btnscissors = document.getElementById('btn3');
+
+btnrock.addEventListener('click', () => {
+
+  playerSelection = rock;
+  console.log(playerSelection);
+  let lel =getComputerChoice();
+  console.log(lel);
+  let resultround= playRound(playerSelection, lel);
+  console.log(resultround);
+});
+
+btnpapper.addEventListener('click', () => {
+
+  playerSelection = papper;
+  console.log(playerSelection);
+
+  game();
+});
+
+btnscissors.addEventListener('click', () => {
+
+  playerSelection = scissors;
+  console.log(playerSelection);
+
+  game();
+});
+
+
 
 function getComputerChoice() {
 
@@ -22,7 +54,6 @@ function getComputerChoice() {
 }
 
 
-let playerSelection;
 
 
 function playRound(playerSelection,pcChoice) {
@@ -49,14 +80,12 @@ function playRound(playerSelection,pcChoice) {
 }
 
 
-
-
 function game() {
 
   for(let i = 0; i < 5; i++){
     
     const pcChoice = getComputerChoice();
-    playerSelection = prompt("Write your choice:")
+    playerSelection;
     console.log("PC "+ pcChoice );
     console.log('Player '+playerSelection);
     let roundwinner = playRound(playerSelection,pcChoice);
@@ -81,6 +110,5 @@ function game() {
   }
   else {console.log('You lost the game');}
 }
-
 
 
